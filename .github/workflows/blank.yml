@@ -26,5 +26,7 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Push to hub
-        run: git push https://huggingface.co/spaces/vm567/sentiment-analysis-app main
+        env:
+            HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: git push https://vm567:$HF_TOKEN@huggingface.co/spaces/vm567/sentiment-analysis-app main
 
