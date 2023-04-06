@@ -1,3 +1,39 @@
+
+---
+title: Sentiment Analysis App
+emoji: 😻
+colorFrom: purple
+colorTo: indigo
+sdk: streamlit
+sdk_version: 1.17.0
+app_file: app.py
+pinned: false
+---
+
+
+
+
+
+
+# Project
+
+What is hugging face space ?
+It is a platform to deploy streamlit or gradio based application
+
+things that will be using in this project - 
+github.com tpo host the code base
+hugging stream face - to host the web application
+github.dev - to edit the code base
+
+
+process - write code - push to github - then the codebase to be deployed to hugging face
+
+Code 
+- created a virtual env to install necessary libraries ( in vscode use command ctrl+shift+p  and enter python create environment) vscode automatically creates a virtual environment for us
+- install necessary libraries 
+- write all the libraries in a file (cmnd  pip  freeze > requirements.txt)
+- create a file name app.py
+
 # Docker project
 
 ## Docker installation
@@ -11,3 +47,4 @@ Go to settings, select general and check for the WSL which was selected by defau
 4. Now, install Ubuntu
 5. Open the Visual Studio code and download the WSL extension pack and then install remote control development extension pack which sets up a development environment for the system. Click ctrl+shift+p and connect to "WSL : connect to the default distro"
 6. Now, open terminal and write "code ."![ss3](https://user-images.githubusercontent.com/123666927/227820667-0c349953-7ff9-49bf-b70b-b603eb58b98a.png)
+
