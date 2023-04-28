@@ -32,6 +32,9 @@ Code
 - install necessary libraries 
 - write all the libraries in a file (cmnd  pip  freeze > requirements.txt)
 - create a file name app.py
+- push the code to your feature branch 
+- follow this link for more reference https://huggingface.co/docs/hub/spaces-github-actions
+- URL to the deployed application----- https://huggingface.co/spaces/vm567/sentiment-analysis-app
 
 # Docker project
 
