@@ -15,7 +15,7 @@ pinned: false
 
 
 # Project
-
+milestone 3
 What is hugging face space ?
 It is a platform to deploy streamlit or gradio based application
 
