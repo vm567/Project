@@ -51,3 +51,5 @@ Go to settings, select general and check for the WSL which was selected by defau
 6. Now, open terminal and write "code ."![ss3](https://user-images.githubusercontent.com/123666927/227820667-0c349953-7ff9-49bf-b70b-b603eb58b98a.png)
 
 Hugging Face URL for USPTO : https://huggingface.co/spaces/vm567/Finetuning_HUPD_dataset
+
+Google sites URL for UPSTO : https://sites.google.com/d/1A5rgwxAxZbYCsSemqmOLxPl88Lh8-LWm/p/1ajaAoktxj7Y3IIUgo3R3aSVE3Ul27ymg/edit
