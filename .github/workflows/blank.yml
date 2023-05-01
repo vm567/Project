@@ -17,4 +17,4 @@ jobs:
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push --force https://vm567:$HF_TOKEN@huggingface.co/spacesvm567/Finetuning_HUPD_dataset main
+        run: git push --force https://vm567:$HF_TOKEN@huggingface.co/spacesvm567/Finetuning_HUPD_dataset milestone-3
