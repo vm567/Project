@@ -50,3 +50,6 @@ Go to settings, select general and check for the WSL which was selected by defau
 5. Open the Visual Studio code and download the WSL extension pack and then install remote control development extension pack which sets up a development environment for the system. Click ctrl+shift+p and connect to "WSL : connect to the default distro"
 6. Now, open terminal and write "code ."![ss3](https://user-images.githubusercontent.com/123666927/227820667-0c349953-7ff9-49bf-b70b-b603eb58b98a.png)
 
+
+
+GOOGLE SITES URL: https://sites.google.com/d/1A5rgwxAxZbYCsSemqmOLxPl88Lh8-LWm/p/1ajaAoktxj7Y3IIUgo3R3aSVE3Ul27ymg/edit
