@@ -50,3 +50,4 @@ Go to settings, select general and check for the WSL which was selected by defau
 5. Open the Visual Studio code and download the WSL extension pack and then install remote control development extension pack which sets up a development environment for the system. Click ctrl+shift+p and connect to "WSL : connect to the default distro"
 6. Now, open terminal and write "code ."![ss3](https://user-images.githubusercontent.com/123666927/227820667-0c349953-7ff9-49bf-b70b-b603eb58b98a.png)
 
+Hugging Face URL for USPTO : https://huggingface.co/spaces/vm567/Finetuning_HUPD_dataset
