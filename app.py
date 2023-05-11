@@ -96,79 +96,79 @@ if st.button("Press"):
 
 
 
-# tokenizer = BertTokenizer.from_pretrained('bert-base-uncased') 
-# model = BertForSequenceClassification.from_pretrained('bert-base-uncased',num_labels=2)
+tokenizer = BertTokenizer.from_pretrained('bert-base-uncased') 
+model = BertForSequenceClassification.from_pretrained('bert-base-uncased',num_labels=2)
 
-# for row in train_set_reduced:
-#   row["abstract"] = tokenizer(row["abstract"], padding=True, truncation=True,
-#                               max_length=512)
-#   row["claims"] = tokenizer(row["claims"], padding=True, truncation=True,
-#                               max_length=512)
+for row in train_set_reduced:
+  row["abstract"] = tokenizer(row["abstract"], padding=True, truncation=True,
+                              max_length=512)
+  row["claims"] = tokenizer(row["claims"], padding=True, truncation=True,
+                              max_length=512)
 
-# X_train_col = train_set_reduced.remove_columns(['decision'])
-# Y_train_col = train_set_reduced.remove_columns(['patent_number','abstract','claims'])
+X_train_col = train_set_reduced.remove_columns(['decision'])
+Y_train_col = train_set_reduced.remove_columns(['patent_number','abstract','claims'])
 
 
 
-# X_train, X_test, y_train, y_test = train_test_split(X_train_col, Y_train_col, test_size=0.2)
+X_train, X_test, y_train, y_test = train_test_split(X_train_col, Y_train_col, test_size=0.2)
 
-# class Dataset(torch.utils.data.Dataset):
-#     def __init__(self, encodings, labels=None):
-#         self.encodings = encodings
-#         self.labels = labels
+class Dataset(torch.utils.data.Dataset):
+    def __init__(self, encodings, labels=None):
+        self.encodings = encodings
+        self.labels = labels
 
-#     def __getitem__(self, idx):
-#         item = {key: torch.tensor(val[idx]) for key, val in self.encodings.items()}
-#         if self.labels:
-#             item["labels"] = torch.tensor(self.labels[idx])
-#         return item
+    def __getitem__(self, idx):
+        item = {key: torch.tensor(val[idx]) for key, val in self.encodings.items()}
+        if self.labels:
+            item["labels"] = torch.tensor(self.labels[idx])
+        return item
 
-#     def __len__(self):
-#         return len(self.encodings["input_ids"])
+    def __len__(self):
+        return len(self.encodings["input_ids"])
 
-# X_train_encodings = tokenizer(list(X_train),padding = True, truncation = True,max_length=512)
-# X_test_encodings = tokenizer(list(X_test),padding = True, truncation = True,max_length=512)
+X_train_encodings = tokenizer(list(X_train),padding = True, truncation = True,max_length=512)
+X_test_encodings = tokenizer(list(X_test),padding = True, truncation = True,max_length=512)
 
-# Y_train_encodings = tokenizer(list(y_train),padding = True, truncation = True,max_length=512)
-# y_test_encodings = tokenizer(list(y_test),padding = True, truncation = True,max_length=512)
+Y_train_encodings = tokenizer(list(y_train),padding = True, truncation = True,max_length=512)
+y_test_encodings = tokenizer(list(y_test),padding = True, truncation = True,max_length=512)
 
-# print(X_train_encodings.items())
+print(X_train_encodings.items())
 
-# print(Y_train_encodings)
+print(Y_train_encodings)
 
-# x_train_dataset = Dataset(X_train_encodings,Y_train_encodings)
-# X_test_dataset = Dataset(X_test_encodings,y_test_encodings)
+x_train_dataset = Dataset(X_train_encodings,Y_train_encodings)
+X_test_dataset = Dataset(X_test_encodings,y_test_encodings)
 
-# print(x_train_dataset)
+print(x_train_dataset)
 
-# print(type(X_train_encodings))
-# print(type(x_train_dataset))
+print(type(X_train_encodings))
+print(type(x_train_dataset))
 
-# def compute_metrics(p):
-#     print(type(p))
-#     pred, labels = p
-#     pred = np.argmax(pred, axis=1)
+def compute_metrics(p):
+    print(type(p))
+    pred, labels = p
+    pred = np.argmax(pred, axis=1)
 
-#     accuracy = accuracy_score(y_true=labels, y_pred=pred)
-#     recall = recall_score(y_true=labels, y_pred=pred)
-#     precision = precision_score(y_true=labels, y_pred=pred)
-#     f1 = f1_score(y_true=labels, y_pred=pred)
+    accuracy = accuracy_score(y_true=labels, y_pred=pred)
+    recall = recall_score(y_true=labels, y_pred=pred)
+    precision = precision_score(y_true=labels, y_pred=pred)
+    f1 = f1_score(y_true=labels, y_pred=pred)
 
-#     return {"accuracy": accuracy, "precision": precision, "recall": recall, "f1": f1}
+    return {"accuracy": accuracy, "precision": precision, "recall": recall, "f1": f1}
 
-# # Define Trainer
-# args = TrainingArguments(
-#     output_dir="output",
-#     num_train_epochs=1,
-#     per_device_train_batch_size=8
+# Define Trainer
+args = TrainingArguments(
+    output_dir="output",
+    num_train_epochs=1,
+    per_device_train_batch_size=8
 
-# )
-# trainer = Trainer(
-#     model=model,
-#     args=args,
-#     train_dataset=x_train_dataset,
-#     eval_dataset=X_test_dataset,
-#     compute_metrics=compute_metrics
-# )
+)
+trainer = Trainer(
+    model=model,
+    args=args,
+    train_dataset=x_train_dataset,
+    eval_dataset=X_test_dataset,
+    compute_metrics=compute_metrics
+)
 
 # # trainer.train()
